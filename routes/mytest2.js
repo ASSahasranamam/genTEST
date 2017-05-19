@@ -67,39 +67,8 @@ function mutate(solution, callback) {
 
 
 console.log('=== TEST BEGINS === ')
-var
-  t = new Task(options)
-// t.on('run start', function () { console.log('run start'); util.log('run') })
-// t.on('run finished', function (results) { console.log('run finished - ', results); util.log('run')})
-// t.on('init start', function () { console.log('init start') })
-// t.on('init end', function (pop) { console.log('init end', pop) })
-// t.on('loop start', function () { console.log('loop start') })
-// t.on('loop end', function () { console.log('loop end') })
-// t.on('iteration start', function (generation) { console.log('iteration start - ',generation) })
-// t.on('iteration end', function () { console.log('iteration end') })
-// t.on('calcFitness start', function () { console.log('calcFitness start') })
-// t.on('calcFitness end', function (pop) { console.log('calcFitness end', pop) })
-// t.on('parent selection start', function () { console.log('parent selection start') })
-// t.on('parent selection end', function (parents) { console.log('parent selection end ',parents) })
-// t.on('reproduction start', function () { console.log('reproduction start') })
-//
-// t.on('find sum', function () { console.log('find sum') })
-// t.on('find sum end', function (sum) { console.log('find sum end', sum) })
+var t = new Task(options)
 
-// t.on('statistics', function (statistics) { console.log('statistics',statistics)})
-//
-// t.on('normalize start', function () { console.log('normalize start') })
-// t.on('normalize end', function (normalized) { console.log('normalize end',normalized) })
-// t.on('child forming start', function () { console.log('child forming start') })
-// t.on('child forming end', function (children) { console.log('child forming end',children) })
-// t.on('child selection start', function () { console.log('child selection start') })
-// t.on('child selection end', function (population) { console.log('child selection end',population) })
-//
-// t.on('mutate', function () { console.log('MUTATION!') })
-//
-//
-// t.on('reproduction end', function (children) { console.log('reproduction end',children) })
-//
 t.on('error', function (error) { console.log('ERROR - ', error) })
 t.run(function (stats) {
   res.send( stats);
