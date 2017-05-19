@@ -4,21 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var Nt = require('ntseq');
-var biomass = require('biomass');
 
-//var genetic = require('genetic');
-
-var index = require('./routes/index');
-var users = require('./routes/mytest');
 var users2 = require('./routes/mytest2');
+var index = require('./routes/index');
+
 
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -29,14 +25,25 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
-app.use('/users2', users2);
+app.use('/response', users2);//app.use('/data', function(req, res){
+
+  //var data = req.body ;
+//console.log( req.body);
+//var route = require('./routes/dnapop')(my_var);
+
+
+//app.getElementsByClassName('className')
+//});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
+
+
+
 
 // error handler
 app.use(function(err, req, res, next) {
